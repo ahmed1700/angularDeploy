@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row" *ngFor="let ahmed of questions ; let i = index">
+         <div class="col-2 alert alert-danger">
+          <button type="button" (click)="vote_click(ahmed.id)" 
+          class="btn btn-secondary">Vote</button>
+          <strong>                                                        
+              <span  class="pl10">
+                {{ i + 1}}  
+              </span>
+          </strong>
+         </div> 
+         <div class="col-10 alert alert-primary">
+          {{ahmed.title}}
+         </div> 
+    </div>
+</div>

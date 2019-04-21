@@ -1,0 +1,33 @@
+<form  [formGroup]="form">
+  <div class="container">
+
+    <div class="form-group">
+      <label for="userName"> UserName </label>
+      <input name="userName" formControlName="userName"  type="text" id="userName" class="form-control">
+      <div *ngIf="userName.pending" >
+         <img src="https://blog.teamtreehouse.com/wp-content/uploads/2015/05/InternetSlowdown_Day.gif" alt="">
+      </div>
+      <div class="alert alert-danger" *ngIf="userName.touched && userName.invalid" >
+        <div *ngIf="userName.errors.required" >Please Enter Your UserName</div>
+        <div *ngIf="userName.errors.checkSpace" >Please Remove Space</div>
+       <div *ngIf="userName.errors.checkExisiting" >UserName Already Exist</div>
+        
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="num"> Number </label>
+      <input name="num" 
+      formControlName="num" type="num"  id="num" class="form-control">
+      <div class="alert alert-danger" *ngIf="num.touched && num.invalid" >
+        <div *ngIf="num.errors.range">
+           range Should be 5 to 9
+        </div>
+       </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Save</button>
+
+  </div>
+
+</form>
